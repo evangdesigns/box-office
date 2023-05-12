@@ -1,30 +1,30 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Common;
+namespace BoxOffice\Common;
 
-use ThePluginName\App\Frontend\Templates;
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\App\Frontend\Templates;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Main function class for external uses
  *
- * @see the_plugin_name()
- * @package ThePluginName\Common
+ * @see box_office()
+ * @package BoxOffice\Common
  */
 class Functions extends Base {
 	/**
-	 * Get plugin data by using the_plugin_name()->getData()
+	 * Get plugin data by using box_office()->getData()
 	 *
 	 * @return array
 	 * @since 1.0.0
@@ -34,7 +34,7 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Get the template instantiated class using the_plugin_name()->templates()
+	 * Get the template instantiated class using box_office()->templates()
 	 *
 	 * @return Templates
 	 * @since 1.0.0

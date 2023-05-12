@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Common\Abstracts;
+namespace BoxOffice\Common\Abstracts;
 
-use ThePluginName\Config\Plugin;
+use BoxOffice\Config\Plugin;
 
 /**
  * The Base class which can be extended by other classes to load in default methods
  *
- * @package ThePluginName\Common\Abstracts
+ * @package BoxOffice\Common\Abstracts
  * @since 1.0.0
  */
 abstract class Base {

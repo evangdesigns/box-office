@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Config;
+namespace BoxOffice\Config;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Internationalization and localization definitions
  *
- * @package ThePluginName\Config
+ * @package BoxOffice\Config
  * @since 1.0.0
  */
 final class I18n extends Base {
@@ -32,7 +32,7 @@ final class I18n extends Base {
 		load_plugin_textdomain(
 			$this->plugin->textDomain(),
 			false,
-			dirname( plugin_basename( _THE_PLUGIN_NAME_PLUGIN_FILE ) ) . '/languages' // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+			dirname( plugin_basename( BOX_OFFICE_PLUGIN_FILE ) ) . '/languages' // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 		);
 	}
 }

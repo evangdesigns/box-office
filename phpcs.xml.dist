@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<ruleset name="The Plugin Name ruleset">
-    <description>Ruleset for the The Plugin Name.</description>
+<ruleset name="Box Office ruleset">
+    <description>Ruleset for the Box Office.</description>
 
-    <file>the-plugin-name.php</file>
+    <file>box-office.php</file>
     <file>./src/</file>
 
     <!-- Additional arguments. -->
@@ -57,7 +57,7 @@
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array">
-                <element value="the-plugin-name-text-domain"/>
+                <element value="box-office"/>
                 <element value="library-textdomain"/>
             </property>
         </properties>
@@ -67,9 +67,9 @@
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <properties>
             <property name="prefixes" type="array">
-                <element value="ThePluginName"/>
-                <element value="_THE_PLUGIN_NAME"/>
-                <element value="the_plugin_name"/>
+                <element value="BoxOffice"/>
+                <element value="BOX_OFFICE"/>
+                <element value="box_office"/>
             </property>
         </properties>
     </rule>

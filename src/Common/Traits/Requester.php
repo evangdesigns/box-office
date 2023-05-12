@@ -1,19 +1,19 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Common\Traits;
+namespace BoxOffice\Common\Traits;
 
-use ThePluginName\Common\Utils\Errors;
+use BoxOffice\Common\Utils\Errors;
 
 /**
  * The requester trait to determine what we request; used to determine
@@ -21,7 +21,7 @@ use ThePluginName\Common\Utils\Errors;
  *
  * @see Bootstrap
  *
- * @package ThePluginName\Common\Traits
+ * @package BoxOffice\Common\Traits
  * @since 1.0.0
  */
 trait Requester {
@@ -50,10 +50,10 @@ trait Requester {
 			default:
 				Errors::wpDie(
 					sprintf( /* translators: %s: request function */
-						__( 'Unknown request type: %s', 'the-plugin-name-text-domain' ),
+						__( 'Unknown request type: %s', 'box-office' ),
 						$type
 					),
-					__( 'Classes are not being correctly requested', 'the-plugin-name-text-domain' ),
+					__( 'Classes are not being correctly requested', 'box-office' ),
 					__FILE__
 				);
 				return false;

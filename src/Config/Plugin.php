@@ -1,19 +1,19 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Config;
+namespace BoxOffice\Config;
 
-use ThePluginName\Common\Traits\Singleton;
+use BoxOffice\Common\Traits\Singleton;
 
 /**
  * Plugin data which are used through the plugin, most of them are defined
@@ -21,7 +21,7 @@ use ThePluginName\Common\Traits\Singleton;
  * that extends the Base abstract class
  *
  * @see Base
- * @package ThePluginName\Config
+ * @package BoxOffice\Config
  * @since 1.0.0
  */
 final class Plugin {
@@ -37,20 +37,20 @@ final class Plugin {
 	 * @since 1.0.0
 	 */
 	public function data(): array {
-		$plugin_data = apply_filters( 'the_plugin_name_plugin_data', [
-			'settings'               => get_option( 'the-plugin-name-settings' ),
+		$plugin_data = apply_filters( 'box_office_plugin_data', [
+			'settings'               => get_option( 'box-office-settings' ),
 			'plugin_path'            => untrailingslashit(
-				plugin_dir_path( _THE_PLUGIN_NAME_PLUGIN_FILE )  // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+				plugin_dir_path( BOX_OFFICE_PLUGIN_FILE )  // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 			),
 			'plugin_template_folder' => 'templates',
-			'ext_template_folder'    => 'the-plugin-name-templates',
+			'ext_template_folder'    => 'box-office-templates',
 			/**
 			 * Add extra data here
 			 */
 		] );
 		return array_merge(
-			apply_filters( 'the_plugin_name_plugin_meta_data',
-				get_file_data( _THE_PLUGIN_NAME_PLUGIN_FILE, // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+			apply_filters( 'box_office_plugin_meta_data',
+				get_file_data( BOX_OFFICE_PLUGIN_FILE, // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 					[
 						'name'         => 'Plugin Name',
 						'uri'          => 'Plugin URI',

@@ -18,5 +18,5 @@ modules:
             domain: "%TEST_SITE_WP_DOMAIN%"
             adminEmail: "%TEST_SITE_ADMIN_EMAIL%"
             title: "WP-Strap"
-            plugins: ['the-plugin-name/the-plugin-name.php']
-            activatePlugins: ['the-plugin-name/the-plugin-name.php']
+            plugins: ['box-office/box-office.php']
+            activatePlugins: ['box-office/box-office.php']

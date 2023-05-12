@@ -1,25 +1,25 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Common\Utils;
+namespace BoxOffice\Common\Utils;
 
-use ThePluginName\Config\Plugin;
+use BoxOffice\Config\Plugin;
 
 /**
  * Utility to show prettified wp_die errors, write debug logs as
  * string or array and to deactivate plugin and print a notice
  *
- * @package ThePluginName\Config
+ * @package BoxOffice\Config
  * @since 1.0.0
  */
 class Errors {
@@ -47,7 +47,7 @@ class Errors {
 	public static function wpDie( $message = '', $subtitle = '', $source = '', $exception = '', $title = '' ) {
 		if ( $message ) {
 			$plugin = self::getPluginData();
-			$title = $title ? $title : $plugin['name'] . ' ' . $plugin['version'] . ' ' . __( '&rsaquo; Fatal Error', 'the-plugin-name-text-domain' );
+			$title = $title ? $title : $plugin['name'] . ' ' . $plugin['version'] . ' ' . __( '&rsaquo; Fatal Error', 'box-office' );
 			Errors::writeLog(
 				[
 					'title'     => $title . ' - ' . $subtitle,
@@ -58,7 +58,7 @@ class Errors {
 			);
 			$source = $source ? '<code>' .
 				sprintf(  /* translators: %s: file path */
-					__( 'Error source: %s', 'the-plugin-name-text-domain' ), $source
+					__( 'Error source: %s', 'box-office' ), $source
 				) . '</code><BR><BR>' : '';
 			$footer = $source . '<a href="' . $plugin['uri'] . '">' . $plugin['uri'] . '</a>';
 			$message = '<p>' . $message . '</p>';
@@ -83,7 +83,7 @@ class Errors {
 	public static function pluginDie( $message = '', $subtitle = '', $source = '', $exception = '', $title = '' ) {
 		if ( $message ) {
 			$plugin = self::getPluginData();
-			$title = $title ? $title : $plugin['name'] . ' ' . $plugin['version'] . ' ' . __( '&rsaquo; Plugin Disabled', 'the-plugin-name-text-domain' );
+			$title = $title ? $title : $plugin['name'] . ' ' . $plugin['version'] . ' ' . __( '&rsaquo; Plugin Disabled', 'box-office' );
 			Errors::writeLog(
 				[
 					'title'     => $title . ' - ' . $subtitle,
@@ -94,19 +94,19 @@ class Errors {
 			);
 			$source = $source ? '<small>' .
 				sprintf( /* translators: %s: file path */
-					__( 'Error source: %s', 'the-plugin-name-text-domain' ), $source
+					__( 'Error source: %s', 'box-office' ), $source
 				) . '</small> - ' : '';
 			$footer = $source . '<a href="' . $plugin['uri'] . '"><small>' . $plugin['uri'] . '</small></a>';
 			$error = "<strong><h3>{$title}</h3>{$subtitle}</strong><p>{$message}</p><hr><p>{$footer}</p>";
-			global $the_plugin_name_die_notice;
-			$the_plugin_name_die_notice = $error;
+			global $box_office_die_notice;
+			$box_office_die_notice = $error;
 			add_action( 'admin_notices',
 				static function () {
-					global $the_plugin_name_die_notice;
+					global $box_office_die_notice;
 					echo wp_kses_post(
 						sprintf(
 							'<div class="notice notice-error"><p>%s</p></div>',
-							$the_plugin_name_die_notice
+							$box_office_die_notice
 						)
 					);
 				}
@@ -114,7 +114,7 @@ class Errors {
 		}
 		add_action( 'admin_init',
 			static function () {
-				deactivate_plugins( plugin_basename( _THE_PLUGIN_NAME_PLUGIN_FILE ) ); // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+				deactivate_plugins( plugin_basename( BOX_OFFICE_PLUGIN_FILE ) ); // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 			}
 		);
 	}

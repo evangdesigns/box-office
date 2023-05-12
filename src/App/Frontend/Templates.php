@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\App\Frontend;
+namespace BoxOffice\App\Frontend;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Class Templates
  *
- * @package ThePluginName\App\Frontend
+ * @package BoxOffice\App\Frontend
  * @since 1.0.0
  */
 class Templates extends Base {
@@ -72,7 +72,7 @@ class Templates extends Base {
 	public function get( $slug, $name = null, $args = [], $load = true ): string {
 		// Execute code for this part.
 		do_action( 'get_template_part_' . $slug, $slug, $name, $args ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-		do_action( 'the_plugin_name_get_template_part_' . $slug, $slug, $name, $args );
+		do_action( 'box_office_get_template_part_' . $slug, $slug, $name, $args );
 		// Get files names of templates, for given slug and name.
 		$templates = $this->getFileNames( $slug, $name, $args );
 		// Return the part that is found.
@@ -107,7 +107,7 @@ class Templates extends Base {
 		 * @since 1.0.0
 		 *
 		 */
-		return apply_filters( 'the_plugin_name_get_template_part', $templates, $slug, $name, $args );
+		return apply_filters( 'box_office_get_template_part', $templates, $slug, $name, $args );
 	}
 
 	/**
@@ -189,7 +189,7 @@ class Templates extends Base {
 		 * @since 1.0.0
 		 *
 		 */
-		$file_paths = apply_filters( 'the_plugin_name_template_paths', $file_paths );
+		$file_paths = apply_filters( 'box_office_template_paths', $file_paths );
 		// Sort the file paths based on priority.
 		ksort( $file_paths, SORT_NUMERIC );
 		return array_map( 'trailingslashit', $file_paths );

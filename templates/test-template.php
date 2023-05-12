@@ -1,20 +1,20 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 ?>
 <p>
     <?php
     /**
-     * @see \ThePluginName\App\Frontend\Templates
+     * @see \BoxOffice\App\Frontend\Templates
      * @var $args
      */
-    echo __( 'This is being loaded inside "wp_footer" from the templates class', 'the-plugin-name-text-domain' ) . ' ' . $args[ 'data' ][ 'text' ];
+    echo __( 'This is being loaded inside "wp_footer" from the templates class', 'box-office' ) . ' ' . $args[ 'data' ][ 'text' ];
     ?>
 </p>

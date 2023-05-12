@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Config;
+namespace BoxOffice\Config;
 
-use ThePluginName\Common\Traits\Singleton;
+use BoxOffice\Common\Traits\Singleton;
 
 /**
  * Plugin setup hooks (activation, deactivation, uninstall)
  *
- * @package ThePluginName\Config
+ * @package BoxOffice\Config
  * @since 1.0.0
  */
 final class Setup {

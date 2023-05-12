@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName;
+namespace BoxOffice;
 
-use ThePluginName\Common\Abstracts\Base;
-use ThePluginName\Common\Traits\Requester;
-use ThePluginName\Common\Utils\Errors;
-use ThePluginName\Config\Classes;
-use ThePluginName\Config\I18n;
-use ThePluginName\Config\Requirements;
+use BoxOffice\Common\Abstracts\Base;
+use BoxOffice\Common\Traits\Requester;
+use BoxOffice\Common\Utils\Errors;
+use BoxOffice\Config\Classes;
+use BoxOffice\Config\I18n;
+use BoxOffice\Config\Requirements;
 
 /**
  * Bootstrap the plugin
@@ -156,7 +156,7 @@ final class Bootstrap extends Base {
 	 * @since 1.0.0
 	 */
 	public function initClasses() {
-		$this->class_list = \apply_filters( 'the_plugin_name_initialized_classes', $this->class_list );
+		$this->class_list = \apply_filters( 'box_office_initialized_classes', $this->class_list );
 		foreach ( $this->class_list as $class ) {
 			try {
 				$set_timer = microtime( true );
@@ -165,14 +165,14 @@ final class Bootstrap extends Base {
 				$this->bootstrap['initialized_classes'][ $class ]->init();
 				$this->bootstrap['initialized_classes'][ $class ] = $this->stopExecutionTimer( $set_timer );
 			} catch ( \Throwable $err ) {
-				\do_action( 'the_plugin_name_class_initialize_failed', $err, $class );
+				\do_action( 'box_office_class_initialize_failed', $err, $class );
 				Errors::wpDie(
 					sprintf(  /* translators: %s: php class namespace */
 						__( 'Could not load class "%s". The "init" method is probably missing or try a `composer dumpautoload -o` to refresh the autoloader.',
-							'the-plugin-name-text-domain'
+							'box-office'
 						), $class
 					),
-					__( 'Plugin initialize failed', 'the-plugin-name-text-domain' ),
+					__( 'Plugin initialize failed', 'box-office' ),
 					__FILE__, $err
 				);
 			}
@@ -215,7 +215,7 @@ final class Bootstrap extends Base {
 		// be a bit slower. The plugin needs to be optimized before production-release
 		// Errors::writeLog(
 		//    [
-		//        'title'   => __( '{{The Plugin Name}} classes are not being loaded by Composer\'s Autoloader' ),
+		//        'title'   => __( 'Box Office classes are not being loaded by Composer\'s Autoloader' ),
 		//        'message' => __( 'Try a `composer dumpautoload -o` to optimize the autoloader that will improve the performance on autoloading itself.' )
 		//    ]
 		//);

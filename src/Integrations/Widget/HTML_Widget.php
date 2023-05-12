@@ -1,25 +1,25 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Integrations\Widget;
+namespace BoxOffice\Integrations\Widget;
 
-use ThePluginName\Config\Plugin;
+use BoxOffice\Config\Plugin;
 use WP_Widget;
 
 /**
  * Class HTML_Widget
  *
- * @package ThePluginName\Integrations\Widget
+ * @package BoxOffice\Integrations\Widget
  */
 class HTML_Widget extends WP_Widget {
 
@@ -65,11 +65,11 @@ class HTML_Widget extends WP_Widget {
 		$this->plugin = Plugin::init();
 		$widget_ops = [
 			'classname'                   => 'widget_html',
-			'description'                 => __( 'Displays HTML code with syntax highlighting.', 'the-plugin-name-text-domain' ),
+			'description'                 => __( 'Displays HTML code with syntax highlighting.', 'box-office' ),
 			'customize_selective_refresh' => true,
 		];
 		$control_ops = [];
-		parent::__construct( 'the-plugin-name-text-domain', __( 'HTML Test Widget', 'the-plugin-name-text-domain' ), $widget_ops, $control_ops );
+		parent::__construct( 'box-office', __( 'HTML Test Widget', 'box-office' ), $widget_ops, $control_ops );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class HTML_Widget extends WP_Widget {
 		 * @param array $instance Settings for the current widget.
 		 * @since 0.1.0
 		 */
-		$content = apply_filters( 'the_plugin_name_html_widget_content', $content, $instance, $this );
+		$content = apply_filters( 'box_office_html_widget_content', $content, $instance, $this );
 		echo $args['before_widget'];
 		echo $content;
 		echo $args['after_widget'];
@@ -126,7 +126,7 @@ class HTML_Widget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, $this->default_instance );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" class="screen-reader-text"><?php esc_html_e( 'Content:', 'the-plugin-name-text-domain' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" class="screen-reader-text"><?php esc_html_e( 'Content:', 'box-office' ); ?></label>
 			<textarea class="widefat html-widget" rows="16" cols="20" id="<?php echo esc_attr( $this->get_field_id( 'content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content' ) ); ?>"><?php echo esc_textarea( $instance['content'] ); ?></textarea>
 		</p>
 		<?php

@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\App\General;
+namespace BoxOffice\App\General;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Class Widgets
  *
- * @package ThePluginName\App\General
+ * @package BoxOffice\App\General
  * @since 1.0.0
  */
 class Widgets extends Base {

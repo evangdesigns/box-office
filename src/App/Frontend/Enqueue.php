@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\App\Frontend;
+namespace BoxOffice\App\Frontend;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Class Enqueue
  *
- * @package ThePluginName\App\Frontend
+ * @package BoxOffice\App\Frontend
  * @since 1.0.0
  */
 class Enqueue extends Base {
@@ -53,7 +53,7 @@ class Enqueue extends Base {
 					'deps'    => [],
 					'handle'  => 'plugin-name-frontend-css',
 					'media'   => 'all',
-					'source'  => plugins_url( '/assets/public/css/frontend.css', _THE_PLUGIN_NAME_PLUGIN_FILE ), // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+					'source'  => plugins_url( '/assets/public/css/frontend.css', BOX_OFFICE_PLUGIN_FILE ), // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 					'version' => $this->plugin->version(),
 				],
 			] as $css ) {
@@ -66,7 +66,7 @@ class Enqueue extends Base {
 					'deps'      => [],
 					'handle'    => 'plugin-test-frontend-js',
 					'in_footer' => true,
-					'source'    => plugins_url( '/assets/public/js/frontend.js', _THE_PLUGIN_NAME_PLUGIN_FILE ), // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
+					'source'    => plugins_url( '/assets/public/js/frontend.js', BOX_OFFICE_PLUGIN_FILE ), // phpcs:disable ImportDetection.Imports.RequireImports.Symbol -- this constant is global
 					'version'   => $this->plugin->version(),
 				],
 			] as $js ) {

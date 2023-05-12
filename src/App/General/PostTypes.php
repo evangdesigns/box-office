@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\App\General;
+namespace BoxOffice\App\General;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Class PostTypes
  *
- * @package ThePluginName\App\General
+ * @package BoxOffice\App\General
  * @since 1.0.0
  */
 class PostTypes extends Base {
@@ -63,13 +63,13 @@ class PostTypes extends Base {
 					'singular_name'  => $this::POST_TYPE['singular'],
 					'menu_name'      => $this::POST_TYPE['title'],
 					'name_admin_bar' => $this::POST_TYPE['singular'],
-					'add_new'        => sprintf( /* translators: %s: post type singular title */ __( 'New %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['singular'] ),
-					'add_new_item'   => sprintf( /* translators: %s: post type singular title */ __( 'Add New %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['singular'] ),
-					'new_item'       => sprintf( /* translators: %s: post type singular title */ __( 'New %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['singular'] ),
-					'edit_item'      => sprintf( /* translators: %s: post type singular title */ __( 'Edit %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['singular'] ),
-					'view_item'      => sprintf( /* translators: %s: post type singular title */ __( 'View %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['singular'] ),
-					'all_items'      => sprintf( /* translators: %s: post type title */ __( 'All %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['title'] ),
-					'search_items'   => sprintf( /* translators: %s: post type title */ __( 'Search %s', 'the-plugin-name-text-domain' ), $this::POST_TYPE['title'] ),
+					'add_new'        => sprintf( /* translators: %s: post type singular title */ __( 'New %s', 'box-office' ), $this::POST_TYPE['singular'] ),
+					'add_new_item'   => sprintf( /* translators: %s: post type singular title */ __( 'Add New %s', 'box-office' ), $this::POST_TYPE['singular'] ),
+					'new_item'       => sprintf( /* translators: %s: post type singular title */ __( 'New %s', 'box-office' ), $this::POST_TYPE['singular'] ),
+					'edit_item'      => sprintf( /* translators: %s: post type singular title */ __( 'Edit %s', 'box-office' ), $this::POST_TYPE['singular'] ),
+					'view_item'      => sprintf( /* translators: %s: post type singular title */ __( 'View %s', 'box-office' ), $this::POST_TYPE['singular'] ),
+					'all_items'      => sprintf( /* translators: %s: post type title */ __( 'All %s', 'box-office' ), $this::POST_TYPE['title'] ),
+					'search_items'   => sprintf( /* translators: %s: post type title */ __( 'Search %s', 'box-office' ), $this::POST_TYPE['title'] ),
 				],
 				'public'             => true,
 				'publicly_queryable' => true,

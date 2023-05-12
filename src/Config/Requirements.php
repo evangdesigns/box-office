@@ -1,20 +1,20 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Config;
+namespace BoxOffice\Config;
 
-use ThePluginName\Common\Abstracts\Base;
-use ThePluginName\Common\Utils\Errors;
+use BoxOffice\Common\Abstracts\Base;
+use BoxOffice\Common\Utils\Errors;
 
 /**
  * Check if any requirements are needed to run this plugin. We use the
@@ -22,7 +22,7 @@ use ThePluginName\Common\Utils\Errors;
  * plugins, themes or PHP/WP version are required.
  * @docs https://github.com/micropackage/requirements
  *
- * @package ThePluginName\Config
+ * @package BoxOffice\Config
  * @since 1.0.0
  */
 final class Requirements extends Base {
@@ -33,7 +33,7 @@ final class Requirements extends Base {
 	 * @since 1.0.0
 	 */
 	public function specifications(): array {
-		return apply_filters( 'the_plugin_name_plugin_requirements', [
+		return apply_filters( 'box_office_plugin_requirements', [
 			'php'            => $this->plugin->requiredPhp(),
 			'php_extensions' => [
 				/**
@@ -89,9 +89,9 @@ final class Requirements extends Base {
 				[
 					'current' => phpversion(),
 					'compare' => $this->plugin->requiredPhp(),
-					'title'   => __( 'Invalid PHP version', 'the-plugin-name-text-domain' ),
+					'title'   => __( 'Invalid PHP version', 'box-office' ),
 					'message' => sprintf( /* translators: %1$1s: required php version, %2$2s: current php version */
-						__( 'You must be using PHP %1$1s or greater. You are currently using PHP %2$2s.', 'the-plugin-name-text-domain' ),
+						__( 'You must be using PHP %1$1s or greater. You are currently using PHP %2$2s.', 'box-office' ),
 						$this->plugin->requiredPhp(),
 						phpversion()
 					),
@@ -100,9 +100,9 @@ final class Requirements extends Base {
 				[
 					'current' => get_bloginfo( 'version' ),
 					'compare' => $this->plugin->requiredWp(),
-					'title'   => __( 'Invalid WordPress version', 'the-plugin-name-text-domain' ),
+					'title'   => __( 'Invalid WordPress version', 'box-office' ),
 					'message' => sprintf( /* translators: %1$1s: required wordpress version, %2$2s: current wordpress version */
-						__( 'You must be using WordPress %1$1s or greater. You are currently using WordPress %2$2s.', 'the-plugin-name-text-domain' ),
+						__( 'You must be using WordPress %1$1s or greater. You are currently using WordPress %2$2s.', 'box-office' ),
 						$this->plugin->requiredWp(),
 						get_bloginfo( 'version' )
 					),

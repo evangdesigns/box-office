@@ -1,22 +1,22 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\Common\Traits;
+namespace BoxOffice\Common\Traits;
 
 /**
  * The singleton skeleton trait to instantiate the class only once
  *
- * @package ThePluginName\Common\Traits
+ * @package BoxOffice\Common\Traits
  * @since 1.0.0
  */
 trait Singleton {

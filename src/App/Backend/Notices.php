@@ -1,24 +1,24 @@
 <?php
 /**
- * {{The Plugin Name}}
+ * Box Office
  *
- * @package   {{the-plugin-name}}
- * @author    {{author_name}} <{{author_email}}>
- * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @package   box-office
+ * @author    Evan G <evangdesigns@gmail.com>
+ * @copyright 2023 Box Office
+ * @license   MIT
+ * @link      https://evangdesigns.com
  */
 
 declare( strict_types = 1 );
 
-namespace ThePluginName\App\Backend;
+namespace BoxOffice\App\Backend;
 
-use ThePluginName\Common\Abstracts\Base;
+use BoxOffice\Common\Abstracts\Base;
 
 /**
  * Class Notices
  *
- * @package ThePluginName\App\Backend
+ * @package BoxOffice\App\Backend
  * @since 1.0.0
  */
 class Notices extends Base {
@@ -49,7 +49,7 @@ class Notices extends Base {
 		global $pagenow;
 		if ( $pagenow === 'options-general.php' ) {
 			echo '<div class="notice notice-warning is-dismissible">
-             <p>' . __( 'This is an example of a notice that appears on the settings page.', 'the-plugin-name-text-domain' ) . '</p>
+             <p>' . __( 'This is an example of a notice that appears on the settings page.', 'box-office' ) . '</p>
          </div>';
 		}
 	}
