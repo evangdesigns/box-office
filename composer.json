@@ -56,5 +56,10 @@
             "email": "hello@wp-strap.com",
             "homepage": "https://wp-strap.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
